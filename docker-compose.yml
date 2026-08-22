@@ -42,7 +42,7 @@ services:
       - floci_default
 
   floci:
-    image: floci/floci:latest-compat
+    image: docker.io/floci/floci:latest-compat
     ports:
       - "4566:4566"
     volumes:
@@ -64,7 +64,7 @@ services:
   # Multi-cloud emulators — enabled with the "multicloud" profile:
   #   docker compose --profile multicloud up
   floci-az:
-    image: floci/floci-az
+    image: docker.io/floci/floci-az
     profiles: ["multicloud"]
     ports:
       - "4577:4577"
@@ -72,7 +72,7 @@ services:
       - floci_default
 
   floci-gcp:
-    image: floci/floci-gcp
+    image: docker.io/floci/floci-gcp
     profiles: ["multicloud"]
     ports:
       - "4588:4588"
@@ -83,7 +83,7 @@ services:
       - floci_default
 
   floci-seed:
-    image: floci/floci-gcp
+    image: docker.io/floci/floci-gcp
     profiles: ["multicloud"]
     command: ["/bin/sh", "/etc/floci/init/seed-clouds.sh"]
     volumes:
